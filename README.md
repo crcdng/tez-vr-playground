@@ -10,15 +10,13 @@ Click on the manifesto and it will open it's OBJKT page in a new tab.
 
 Built with [A-Frame](https://aframe.io/) and [Taquito](https://tezostaquito.io).
 
-DO NOT upgrade the (deprecated) parcel bundler, newer versions have problems with static files such as 3d model formats. DO NOT downgrade either.
-
-The working configuration is
-* "parcel-bundler": "1.12.5",
-* "parcel-plugin-static-files-copy": "2.6.0",
-
 Prerequisites: [node.js/npm](https://nodejs.org/)
 
-To install, run: `npm install`
+Download or clone this repo. 
+
+To install, run: `npm install` in the main folder
+
+DO NOT upgrade the (deprecated) parcel bundler, newer versions have problems with static files such as 3d model formats. DO NOT downgrade either. The working configuration is "parcel-bundler": "1.12.5" and "parcel-plugin-static-files-copy": "2.6.0".
 
 To start, run: `npm run watch`, then open http://localhost:1234 in the browser.
 

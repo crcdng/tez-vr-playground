@@ -1,8 +1,8 @@
 import { TezosToolkit } from '@taquito/taquito';
 
 export class App {
-  constructor () {
-    this.tk = new TezosToolkit('https://api.tez.ie/rpc/mainnet');
+  constructor (rcpClient = 'https://api.tez.ie/rpc/mainnet') {
+    this.tk = new TezosToolkit(rcpClient);
   }
 
   init (address) { this.address = address; }
