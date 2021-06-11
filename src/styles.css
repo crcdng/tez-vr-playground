@@ -1,0 +1,32 @@
+a-scene {
+  height: 200px;
+  width: 300px;
+}
+
+body {
+  font-family: sans-serif;
+  color: white;
+}
+
+#dialog {
+  width: 600px;
+  border: 1px solid #35636e;
+  border-radius: 3px;
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  
+  font-size: 20px;
+  background-color: #0D61FF;
+  padding: 10px;
+  z-index: 100;
+}
+
