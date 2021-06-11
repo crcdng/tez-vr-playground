@@ -1,3 +1,4 @@
+/* global AFRAME, M */
 import { App } from './app';
 
 const app = new App();
@@ -6,28 +7,38 @@ document.addEventListener('DOMContentLoaded', function () {
   const waElement = document.querySelector('#enteraddress');
   const waInstance = M.Modal.init(waElement, { dismissible: false });
   waInstance.open();
+
+  document.querySelector('#enteraddress')?.addEventListener('click', async function () {
+    const address = document.querySelector('#address')?.value.trim();
+    console.log(address);
+    app.init(address);
+  });
 });
 
-document.querySelector('#enteraddress')?.addEventListener('click', async function () {
-  const address = document.querySelector('#address')?.value.trim();
-  console.log(address);
-  app.init(address);
-  document.querySelector('#dialog')?.classList.add('scale-out');
-});
+// AFRAME components should be registered before the <a-scene> tag
+// These components need access to the global Taquito app instance.
 
 AFRAME.registerComponent('henlink', {
-  schema: { type: 'string' },
+  schema: { url: { type: 'string' }, loc: { type: 'string', default: 'tab' } },
   init: function () {
     console.log('registering component henlink');
   },
   update: function () {
-    const url = this.data;
+    const url = this.data.url;
+    const loc = this.data.loc;
     this.el.addEventListener('click', function (evt) {
       console.log('clicked on henlink');
-      window.open(url, '_blank');
+      if (loc === 'tab') {
+        window.open(url, '_blank');
+      } else if (loc === 'frame') {
+        const henWindowElement = document.querySelector('#henwindow');
+        const henFrame = document.querySelector('#henframe');
+        henFrame.setAttribute('src', url);
+        const henWindowInstance = M.Modal.init(henWindowElement, { dismissible: false });
+        henWindowInstance.open();
+      }
     });
-  },
-  remove: function () {}
+  }
 });
 
 AFRAME.registerComponent('balance', {
@@ -43,6 +54,5 @@ AFRAME.registerComponent('balance', {
       document.querySelector('#balance').setAttribute('text-geometry', textGeometryAttribute);
       console.log(balance);
     });
-  },
-  remove: function () {}
+  }
 });

@@ -6,7 +6,7 @@
 
 Enter your wallet address.    
 Click on the rabbit and it will tell your balance.    
-Click on the manifesto and it will open it's OBJKT page in a new tab.    
+Click on the manifesto and it will open it's OBJKT page from where you can collect it.    
 
 Built with [A-Frame](https://aframe.io/) and [Taquito](https://tezostaquito.io).
 
