@@ -1,6 +1,10 @@
 # H=N VR Experiments Playground 
 
-## Iteration 1: Display your wallet balance in VR
+## DEPRECATED: This repository has been deprecated
+
+**This repository has been deprecated in favour of a proper tutorial.** 
+
+Please check out the updated version here: [https://github.com/i3games/hen-metaverse-tutorial-1](https://github.com/i3games/hen-metaverse-tutorial-1)
 
 ![](docs/screen.png)
 
