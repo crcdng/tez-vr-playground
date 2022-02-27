@@ -1,10 +1,10 @@
-# H=N VR Experiments Playground 
+# Tez VR Playground 
 
 ![](docs/screen.png)
 
-Enter your wallet address.    
+Enter your Tezos address.    
 Click on the rabbit and it will tell your balance.    
-Click on the manifesto and it will open it's page on Teia.art from where you can collect it.    
+Click on the manifesto and it will open [it's page on teia.art](https://teia.art/objkt/61589) from where you can collect it.    
 
 Built with [A-Frame](https://aframe.io/) and [Taquito](https://tezostaquito.io).
 
