@@ -8,6 +8,7 @@ export class App {
   init (address) { this.address = address; }
 
   async getBalance (address = this.address) {
+    if (address == null || address === "") { return; }
     const rawBalance = await this.tk.rpc.getBalance(address);
     const balance = rawBalance.toNumber() / 1000000;
     return balance;

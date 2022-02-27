@@ -17,17 +17,14 @@
             <!-- img asset links are rewritten by parcel -->
             <img id="hic" src="../static/hic.jpg" />
             <img id="nunc" src="../static/nunc.jpg" />
+            <img id="teia" src="../static/teia.jpg" />
+            <img id="tez" src="../static/tezos.png" />
+            <img id="coins" src="../static/coins.jpg" />
             <img
               id="artwork"
               src="https://cloudflare-ipfs.com/ipfs/QmRTCDnHzjSK5Xp5bvPqGMQy7yXCvt4kSKLRRwBCETm9Tb"
               crossorigin="anonymous"
             />
-            <!-- these assets are copied into the target directory by the parcel static-files-copy plugin -->
-            <a-asset-item id="modrabbit" src="rabbit.glb"></a-asset-item>
-            <a-asset-item
-              id="comic-sans-bold"
-              src="ComicSansMS_Bold.json"
-            ></a-asset-item>
           </a-assets>
 
           <a-sphere
@@ -41,6 +38,9 @@
             width="1"
             height="1"
             depth="1"
+            class="clickable"
+            balance
+            src="#tez"
             color="#4CC3D9"
           ></a-box>
           <a-cylinder
@@ -58,24 +58,21 @@
             class="clickable"
             henlink="url: https://www.teia.art/objkt/61589; loc: frame"
           ></a-plane>
+          <a-plane
+            position="0 3.85 -10"
+            rotation="0 0 0"
+            width="8"
+            height="14"
+            src="#teia"
+          ></a-plane>
           <a-plane rotation="-90 0 0" width="4" height="4" src="#hic"></a-plane>
 
           <a-entity
-            id="rabbit"
-            scale="0.23 0.23 0.23"
-            position="2 0.95 -1.5"
-            rotation="0 -110 0"
-            class="clickable"
-            gltf-model="#modrabbit"
-            balance
-          ></a-entity>
-
-          <a-entity
             id="balance"
-            text-geometry="value: ; font: #comic-sans-bold"
-            material="color: #FF11B4"
-            position="0 2.4 -1.5"
-            animation__osc="property: position; dur: 980; dir: alternate; easing: easeInOutSine; loop: true; to: 0 2.9 -1.5"
+            text="width: 5; value: ;"
+            position="-1 1.0 -1"
+            rotation="0 45 0"
+            animation__osc="property: position; dur: 980; dir: alternate; easing: easeInOutSine; loop: true; to: -1 1.5 -1"
           >
           </a-entity>
 
@@ -94,7 +91,7 @@
             </a-camera>
           </a-entity>
 
-          <a-sky color="#6EBAA7"></a-sky>
+          <a-sky src="#coins"></a-sky>
         </a-scene>
       </div>
     </div>
@@ -104,7 +101,7 @@
         <h4>Tezos Address</h4>
         <p>
           Enter your Tezos wallet address and click on the rabbit to see your
-          balance. Click on the manifesto to open it's H=N OBJKT page.
+          balance. Click on the manifesto to open it's page on teia.art.
         </p>
         <input id="address" type="text" class="validate" />
         <label class="active" for="address">Tezos address</label>

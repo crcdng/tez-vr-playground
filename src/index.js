@@ -50,8 +50,8 @@ AFRAME.registerComponent('balance', {
     this.el.addEventListener('click', async function (evt) {
       console.log('click on component balance');
       const balance = await app.getBalance();
-      const textGeometryAttribute = `value: ${balance} Tz; font: #comic-sans-bold`;
-      document.querySelector('#balance').setAttribute('text-geometry', textGeometryAttribute);
+      const textAttribute = `value: ${balance} Tz;`;
+      document.querySelector('#balance').setAttribute('text', textAttribute);
       console.log(balance);
     });
   }
